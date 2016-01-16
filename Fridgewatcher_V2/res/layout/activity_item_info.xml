@@ -1,0 +1,207 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".ItemInfo" >
+
+    <ScrollView
+        android:id="@+id/foodListLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/mainButtonLayout"
+        android:layout_marginTop="10dp" >
+
+        <RelativeLayout
+            android:id="@+id/infoRelativeLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/infoItemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:ems="10" >
+
+                <requestFocus />
+            </EditText>
+
+            <LinearLayout
+                android:id="@+id/infoDateLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/infoExpiryDate" >
+
+                <EditText
+                    android:id="@+id/infoDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:inputType="number"
+                    android:ems="10" >
+
+                    <requestFocus />
+                </EditText>
+
+                <EditText
+                    android:id="@+id/infoMonth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:inputType="number"
+                    android:ems="10" >
+
+                    <requestFocus />
+                </EditText>
+
+                <EditText
+                    android:id="@+id/infoYear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:inputType="number"
+                    android:ems="10" >
+
+                    <requestFocus />
+                </EditText>
+            </LinearLayout>
+
+            <Spinner
+                android:id="@+id/infoSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/infoDateLayout" />
+
+            <TextView
+                android:id="@+id/infoExpiryDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/infoItemName"
+                android:layout_centerHorizontal="true"
+                android:text="Expiry Date: "
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/infoQuantityLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/infoSpinner"
+                android:text="Quantity: "
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <EditText
+                android:id="@+id/infoQuantityEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/infoQuantityLabel"
+                android:layout_toRightOf="@+id/infoQuantityLabel"
+                android:inputType="number"
+                android:ems="10" />
+            
+            <TextView
+                android:id="@+id/infoCompletionLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/infoQuantityEdit"
+                android:text="Item's consumed so far: "
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+            
+            <TextView 
+                android:id="@+id/infoCompletionDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/infoCompletionLabel"
+                android:text="Text"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+            <SeekBar
+                android:id="@+id/infoCompletionEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@id/infoCompletionDisplay"
+                android:layout_below="@id/infoCompletionLabel"
+                />
+            <TextView 
+                android:id="@+id/infoCommentLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/infoCompletionEdit"
+                android:text="User notes: "
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+            
+            <EditText 
+                android:id="@+id/infoComment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/infoCommentLabel" 
+                android:hint="Enter notes"
+                android:ems="10" />
+            
+            <Button
+                android:id="@+id/infoDeleteButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:text="Delete item"
+                android:onClick="deleteItem"
+                android:layout_below="@id/infoComment" />
+            
+            <Button
+                android:id="@+id/infoRecipeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:text="Search for recipes"
+                android:onClick="searchRecipes"
+                android:layout_below="@id/infoDeleteButton" />
+            
+            <Button
+                android:id="@+id/infoReturnButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:onClick="saveAndExit"
+                android:text="Save and return to main screen"
+                android:layout_below="@id/infoRecipeButton" />
+            
+            "
+            
+            
+            
+            
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,151 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".AddFood" >
+
+    <TextView
+        android:id="@+id/enterFoodNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="5dp"
+        android:text="Name of Food: "
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/enterFoodName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/enterFoodNameLabel"
+        android:layout_margin="5dp"
+        android:ems="10"
+        android:hint="Enter name of food" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/enterDateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/enterFoodName"
+        android:layout_margin="5dp"
+        android:text="Enter expiration date"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/addFoodButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:onClick="addFoodClick"
+        android:text="Add food to fridge catalogue" />
+
+    <EditText
+        android:id="@+id/enterMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/enterDateLabel"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="Month"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/enterDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/enterMonth"
+        android:layout_below="@+id/enterDateLabel"
+        android:ems="10"
+        android:hint="Day"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/enterYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_toRightOf="@id/enterMonth"
+        android:layout_alignBottom="@+id/enterMonth"
+        android:ems="10"
+        android:hint="Year"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/enterNumberLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/enterDateLabel"
+        android:layout_below="@+id/enterMonth"
+        android:text="Number of Food Items:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/foodNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/enterNumberLabel"
+        android:layout_alignBottom="@+id/enterNumberLabel"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@id/enterNumberLabel"
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/colourSpinnerLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/enterNumberLabel"
+        android:layout_below="@+id/foodNumber"
+        android:text="Select Category"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Spinner
+        android:id="@+id/colourSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/colourSpinnerLabel"
+        android:layout_below="@+id/colourSpinnerLabel" />
+
+    <CheckBox
+        android:id="@+id/requirePercentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/colourSpinner"
+        android:text="Require percentage complete" />
+
+    <Button
+        android:id="@+id/barcodeScan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/requirePercentage"
+        android:text="Scan barcode"
+        android:onClick="barcodeScanClick" />
+
+    <Button
+        android:id="@+id/voiceRecognition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/barcodeScan"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:text="Voice to Text" 
+        android:onClick="voiceRecClick"/>
+
+</RelativeLayout>
